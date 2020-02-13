@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: url('bg4.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bottomdiv {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 40px 0px 40px ;
+    width: 100%;
+}
+
+#check, #check2, #check3, #check4, #check5, #check6{
+    float: right;
+    margin-top: 10px;
+}
+
+.field {
+    padding: 0px 40px 20px 40px ;
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: darkred;
+    -moz-box-shadow:    1px 2px 2px 0px  rgb(38, 25, 49);
+    -webkit-box-shadow: 1px 2px 2px 0px  rgb(38, 25, 49);
+    box-shadow:         1px 1px 18px 3px rgb(21, 11, 29);
+    cursor: pointer;
+    border-radius: 10px;
+    background-image: linear-gradient(to right bottom,rgb(255, 0, 0), #3a0000 75%);
+}
+
+#submit {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5em;
+    color: rgb(255, 251, 0);
+    text-shadow: 2px 1px 2px #000000;
+
+}
+
+@media screen and ( max-height: 600px) {
+    #submit {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1em;
+    color: white;
+    }
+  }
+
+label {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-shadow: 1px 1px 2px #130029;
+}
+
+#country {
+    width: 100%;
+    height: 35px;
+    border: none;
+    outline: none;
+    -moz-box-shadow:    1px 2px 2px 0px rgb(48, 21, 88);
+    -webkit-box-shadow: 1px 2px 2px 0px rgb(48, 21, 88);
+    box-shadow:         1px 1px 18px 3px rgb(48, 21, 88);
+}
+
+input[type=text] {
+    color: #570000;
+    font-size: 1rem;
+    font-family:'Times New Roman', serif;
+}
+
+.input{
+    padding-left: 10px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    outline: none;
+    -moz-box-shadow:    1px 2px 2px 0px rgb(48, 21, 88);
+    -webkit-box-shadow: 1px 2px 2px 0px rgb(48, 21, 88);
+    box-shadow:         1px 1px 18px 3px rgb(24, 10, 46);
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.error {
+    margin-top: 5px;
+    color: red;
+    height: 0px;
+    text-shadow: 1px 1px 1px #130029;
+}
+
+#cross {
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-shadow: 1px 2px 1px #130029;
+}
+
+#green {
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 7px;
+    text-shadow: 1px 2px 1px #130029;
+}
+
+.fa-eye-slash {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 18px;
+    text-shadow: 1px 2px 1px #130029;
+}
+
+.fa-eye {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 18px;
+    text-shadow: 1px 2px 1px #130029;
+}
+
+.fa-check {
+    position: absolute;
+    margin: 4px;
+    color: green;
+    display: inline;
+}
+
+.fa-times-circle {
+    position: absolute;
+    margin: 5px;
+    color: rgb(167, 0, 0);
+}
+
+/* Change autofill styles*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: rgb(48, 21, 88);
+  -moz-box-shadow:    1px 2px 2px 0px  rgb(38, 25, 49);
+  -webkit-box-shadow: 1px 2px 2px 0px  rgb(38, 25, 49);
+  box-shadow:         1px 1px 2px 0px rgb(165, 136, 7);
+  transition: background-color 5000s ease-in-out 0s;
+}
