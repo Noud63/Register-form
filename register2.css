@@ -11,7 +11,6 @@ html {
 }
 
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -22,18 +21,62 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+}
+
+@media screen and ( max-height: 900px) {
+    #container {
+        margin-top: 30px;
+    }
+  }
+
+#wrapper {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+#headwrap {
+    width: 100%;
+    padding: 0px 40px 0px 40px ;
+
+}
+
+#header {
+    font-family: 'Stardos Stencil';
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    font-size: 1.5em;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0px 40px 0px 40px ;
+    margin-bottom: 20px;
 }
 
 #bottomdiv {
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 0px 40px 0px 40px ;
     width: 100%;
+    font-size: 1.5em;
 }
+
+@media screen and ( max-height: 900px) {
+    #bottomdiv {
+        margin-bottom: 30px;
+        margin-top: 15px;
+    }
+  }
 
 #check, #check2, #check3, #check4, #check5, #check6{
     float: right;
@@ -55,30 +98,38 @@ body {
     box-shadow:         1px 1px 18px 3px rgb(21, 11, 29);
     cursor: pointer;
     border-radius: 10px;
-    background-image: linear-gradient(to right bottom,rgb(255, 0, 0), #3a0000 75%);
+    background-image: linear-gradient(to bottom,rgb(190, 0, 0), #3b0000 60%);
 }
 
-#submit {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.5em;
-    color: rgb(255, 251, 0);
-    text-shadow: 2px 1px 2px #000000;
-
-}
-
-@media screen and ( max-height: 600px) {
-    #submit {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1em;
-    color: white;
+@media screen and ( max-height: 900px) {
+    .btn {
+        height: 35px;
     }
   }
 
+#submit {
+    font-family: 'Stardos Stencil';
+    font-size: 1.5em;
+    color: rgb(255, 104, 104);
+    text-shadow: 2px 1px 2px #000000;
+    letter-spacing: 5px;
+}
+
+#submit:hover {
+    color: rgb(255, 238, 0);
+}
+
+@media screen and (max-height: 900px) {
+    #submit {
+    font-size: 1.2em;
+   }
+}
+
 label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-family:'Arial';
     color: rgb(255, 255, 255);
     font-size: 16px;
-    text-shadow: 1px 1px 2px #130029;
+    text-shadow: 1px 1px 3px #0a0016;
 }
 
 #country {
@@ -91,10 +142,16 @@ label {
     box-shadow:         1px 1px 18px 3px rgb(48, 21, 88);
 }
 
+@media screen and ( max-height: 900px) {
+    #country  {
+        height: 30px;
+    }
+  }
+
 input[type=text] {
     color: #570000;
     font-size: 1rem;
-    font-family:'Times New Roman', serif;
+    font-family:'arial';
 }
 
 .input{
@@ -111,11 +168,18 @@ input[type=text] {
     background-color: white;
 }
 
+@media screen and ( max-height: 900px) {
+    .input {
+        height: 30px;
+    }
+  }
+
+
 .error {
     margin-top: 5px;
     color: red;
     height: 0px;
-    text-shadow: 1px 1px 1px #130029;
+    text-shadow: 1px 1px 1px #0d001b;
 }
 
 #cross {
@@ -125,12 +189,24 @@ input[type=text] {
     text-shadow: 1px 2px 1px #130029;
 }
 
+@media screen and ( max-height: 900px) {
+    #cross  {
+        margin-top: 3px;
+    }
+  }
+
 #green {
     position: absolute;
     margin-left: 5px;
     margin-top: 7px;
     text-shadow: 1px 2px 1px #130029;
 }
+
+@media screen and ( max-height: 900px) {
+    #green  {
+        margin-top: 4px;
+    }
+  }
 
 .fa-eye-slash {
     position: absolute;
@@ -177,6 +253,77 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: rgb(48, 21, 88);
   -moz-box-shadow:    1px 2px 2px 0px  rgb(38, 25, 49);
   -webkit-box-shadow: 1px 2px 2px 0px  rgb(38, 25, 49);
-  box-shadow:         1px 1px 2px 0px rgb(165, 136, 7);
+  box-shadow:         1px 1px 2px 0px rgb(31, 8, 53);
   transition: background-color 5000s ease-in-out 0s;
 }
+
+/* The modal popup*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+  /* Modal Content/Box */
+  .modal-content {
+    text-align: center;
+    position: absolute;
+    background-color: #fefefe;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(158, 103, 230);
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    padding: 20px 10px 20px 10px;
+  }
+
+  .modal-content .text {
+    color: rgb(103, 59, 175);
+    font-size: 1.5em;
+  }
+
+  @media screen and ( max-width: 700px) {
+    .modal-content .text {
+        font-size: 1em;
+    }
+  }
+
+  @media screen and ( max-width: 700px) {
+    .modal-content {
+        width: 80%;
+    }
+  }
+
+
+/* The Close Button */
+  .close {
+    text-align: center;
+    color: rgb(77, 30, 151);
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 28px;
+    height: 28px;
+    font-size:1.5em;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 14px;
+    border: 2px solid rgb(158, 103, 230); 
+    
+  }
+
+  .close:hover,
+  .close:focus {
+    color: rgb(182, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+  }

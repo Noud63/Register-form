@@ -1,4 +1,4 @@
-// 
+//Register and validation 
 const username = document.myForm.Name;
 const adress = document.myForm.Adress;
 const city = document.myForm.City;
@@ -28,7 +28,7 @@ const icon = '<i class="fa fa-check" style="font-size:25px; color:green;"></i>';
 const icon2 = '<i class="fa fa-times-circle" style="font-size:25px; color:red;"></i>'; 
 const icon3 = '<img src="icon3.png" style="width:25px; height: 25px;" id="cross">'; 
 const icon4 = '<img src="icon4.png" style="width:22px; height: 22px;" id="green">';
-const emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+const emailFilter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 //EventListeners
 const btn = document.querySelector('.btn');
@@ -80,7 +80,7 @@ function validate() {
       return false;
    }else{
       check.innerHTML = icon4;
-      username.style.border = '1px solid  rgb(165, 136, 7)';
+      username.style.border = "1px solid rgb(165, 136, 7)";
       nameError.textContent = ""
       adress.focus();
    }
@@ -93,12 +93,12 @@ function validate() {
       return false;
 
    }else if(!validateAddress(adress.value)){
-      adress.style.border = "1px solid  rgb(165, 136, 7)";
+      adress.style.border = "1px solid rgb(165, 136, 7)";
       adressError.textContent = "Not a valid address!"
       return false;
    }else if(validateAddress(adress.value)){
       check2.innerHTML = icon4;
-      adress.style.border = "1px solid  rgb(165, 136, 7)";
+      adress.style.border = "1px solid rgb(165, 136, 7)";
       adressError.textContent = ""
       city.focus();
    }
@@ -111,7 +111,7 @@ function validate() {
       return false;
    }else{
       check3.innerHTML = icon4;
-      city.style.border = "1px solid  rgb(165, 136, 7)"
+      city.style.border = "1px solid rgb(165, 136, 7)"
       cityError.textContent = ""
       country.focus();
    }
@@ -124,20 +124,26 @@ function validate() {
       return false;
    }else{
       check4.innerHTML = icon4;
-      country.style.border ="1px solid  rgb(165, 136, 7)"
+      country.style.border ="1px solid rgb(165, 136, 7)"
       countryError.textContent = ""
       email.focus(); 
    }
 
    // E-mail input
-   if (!emailFilter.test(email.value)) {
+
+   if(email.value === ""){
+      check5.innerHTML = icon3;
+      email.style.border = "2px solid red";
+      emailError.textContent = "Please enter e-mail address!";
+      return false;
+
+   }else if (!emailFilter.test(email.value)) {
       check5.innerHTML = icon3;
       email.style.border = "2px solid red";
       emailError.textContent = "Invalid e-mail adress!";
       return false;
-   }
 
-   if (emailFilter.test(email.value)) {
+   }else if (emailFilter.test(email.value)) {
       check5.innerHTML = icon4;
       email.style.border = "1px solid rgb(165, 136, 7)";
       emailError.textContent = ""
@@ -155,7 +161,7 @@ function validate() {
       passwordError.textContent = "Invalid password!";
       return false
    }else if(validatePassword(password.value)){
-      password.style.border = "1px solid  rgb(165, 136, 7)";
+      password.style.border = "1px solid rgb(165, 136, 7)";
       passwordError.textContent = "";
       confirmPassword.focus();
    }
@@ -173,8 +179,30 @@ function validate() {
       return false;
    }else if(password.value === confirmPassword.value){
       check6.innerHTML = icon4;
-      confirmPassword.style.border = "1px solid  rgb(165, 136, 7)";
+      confirmPassword.style.border = "1px solid rgb(165, 136, 7)";
       confirmPasswordError.textContent = "";
    }
 }
 
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+function showPopup() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
