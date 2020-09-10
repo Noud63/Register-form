@@ -188,16 +188,21 @@ function validate() {
 var modal = document.getElementById("myModal");
 
 // When the user clicks the button, open the modal 
-function showPopup() {
+function showPopup() {                        //method="POST" action="javascript:showPopup();"
   modal.style.display = "block";
+  const checkedElements = document.querySelectorAll('.input, .check')
+  checkedElements.forEach( el => {
+     el.value = ""
+     el.innerHTML = ""
+  })
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on (x), close the modal
 document.querySelector('.close').onclick = function() {
    modal.style.display = "none";
  }
 
-// When the user clicks anywhere outside of the modal, close modal
+// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";

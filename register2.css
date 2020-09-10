@@ -59,6 +59,12 @@ body {
     margin-bottom: 20px;
 }
 
+@media screen and ( max-width: 320px) {
+    #header {
+        font-size: 1em;
+    }
+  }
+
 #bottomdiv {
     margin-top: 20px;
     margin-bottom: 80px;
@@ -306,18 +312,17 @@ select:-webkit-autofill:focus {
 
 /* The Close Button */
   .close {
-    text-align: center;
     color: rgb(77, 30, 151);
     position: absolute;
-    top: -14px;
-    right: -14px;
-    width: 28px;
-    height: 28px;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
     font-size:1.5em;
     font-weight: bold;
     background-color: white;
-    border-radius: 14px;
-    border: 2px solid rgb(158, 103, 230); 
+    border-radius: 15px;
+    border: 3px solid rgb(158, 103, 230); 
     
   }
 
